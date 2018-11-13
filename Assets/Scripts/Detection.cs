@@ -27,10 +27,13 @@ public class Detection : MonoBehaviour {
         float dist = 9999;
         for (int i = 0; i < enemies.Count; i++)
         {
-            if(Vector3.Distance(transform.position, enemies[i].position) < dist)
+            if (enemies[i] != null)
             {
-                closest = enemies[i];
-                dist = Vector3.Distance(transform.position, enemies[i].position);
+                if (Vector3.Distance(transform.position, enemies[i].position) < dist)
+                {
+                    closest = enemies[i];
+                    dist = Vector3.Distance(transform.position, enemies[i].position);
+                }
             }
         }
 
