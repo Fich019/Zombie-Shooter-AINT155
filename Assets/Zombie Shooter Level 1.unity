@@ -620,7 +620,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  smoothing: 999
+  smoothing: 5
   adjustmentAngle: 270
 --- !u!114 &874280140
 MonoBehaviour:
