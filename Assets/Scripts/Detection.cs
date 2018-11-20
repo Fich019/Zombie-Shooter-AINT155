@@ -13,6 +13,11 @@ public class Detection : MonoBehaviour {
         InvokeRepeating("Shoot", 0, 2);
 	}
 
+    private void Update()
+    {
+        RemoveEnemy();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(!enemies.Contains(collision.transform))
@@ -21,6 +26,16 @@ public class Detection : MonoBehaviour {
         }
     }
 
+    void RemoveEnemy()
+    {
+        for (int i = 0; i <= enemies.Count - 1; i++)
+        {
+            if (enemies[i] == null)
+            {
+                enemies.Remove(enemies[i]);
+            }
+        }
+    }
     void Shoot()
     {
         Transform closest = null;
@@ -29,6 +44,10 @@ public class Detection : MonoBehaviour {
         {
             if (enemies[i] != null)
             {
+                if (!enemies.Contains(enemies[i]))
+                {
+
+                }
                 if (Vector3.Distance(transform.position, enemies[i].position) < dist)
                 {
                     closest = enemies[i];
