@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour {
+public class CompanionWeapon : MonoBehaviour {
+
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
+    public Transform bulletSpawnLeft;
+
     public float fireTime = 0.5f;
 
     private bool isFiring = false;
@@ -14,10 +17,11 @@ public class Weapon : MonoBehaviour {
         isFiring = false;
     }
 
-    private void Fire()
+    public void Fire()
     {
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
+        Instantiate(bulletPrefab, bulletSpawnLeft.position, bulletSpawnLeft.rotation);
 
         if (GetComponent<AudioSource>() != null)
         {
@@ -26,20 +30,5 @@ public class Weapon : MonoBehaviour {
 
         Invoke("SetFiring", fireTime);
     }
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	private void Update () {
-		if (Input.GetMouseButton(0)) // change this for companion
-        {
-            if (!isFiring)
-            {
-                Fire();
-            }
-        }
-	}
+   
 }

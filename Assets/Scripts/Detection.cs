@@ -1,16 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Detection : MonoBehaviour {
 
-    public SmoothLookAtTarget2D lookAt;
+    public SmoothLookAtTargetCompanion2D lookAt;
 
     public List<Transform> enemies = new List<Transform>();
 
+
+    public UnityEvent onFindEnemy;
+
 	void Start ()
     {
-        InvokeRepeating("Shoot", 0, 2);
+        InvokeRepeating("Shoot", 0, 0.25f);
 	}
 
     private void Update()
@@ -52,6 +56,8 @@ public class Detection : MonoBehaviour {
                 {
                     closest = enemies[i];
                     dist = Vector3.Distance(transform.position, enemies[i].position);
+
+                    onFindEnemy.Invoke();
                 }
             }
         }

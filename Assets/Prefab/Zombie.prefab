@@ -201,7 +201,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f905425edc62d04ba58f5aacc13fe78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  Companion: {fileID: 0}
   target: {fileID: 0}
+  Range: 3
   speed: 5
 --- !u!114 &114657219430629670
 MonoBehaviour:
