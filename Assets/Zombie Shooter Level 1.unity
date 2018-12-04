@@ -582,7 +582,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1875059213}
-  speed: 5
+  speed: 2
 --- !u!58 &874280135
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1444,7 +1444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7376e35b1eca1864e91b3663c846e15d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1
+  time: 2
   repeat: 1
   onTimerComplete:
     m_PersistentCalls:
