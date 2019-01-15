@@ -60,3 +60,9 @@ TagManager:
   - name: Foreground
     uniqueID: 1634847331
     locked: 0
+  - name: Walls
+    uniqueID: 3844411625
+    locked: 0
+  - name: Doors
+    uniqueID: 1351644829
+    locked: 0
