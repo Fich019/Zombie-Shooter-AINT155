@@ -8,14 +8,15 @@ public class Player : MonoBehaviour {
     public static event UpdateHealth OnUpdateHealth;
 
     private Animator gunAnim;
-	// Use this for initialization
-	void Start () {
+
+    // Use this for initialization
+    void Start () {
         gunAnim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0))
         {
             gunAnim.SetBool("isFiring", true);
         }
@@ -23,7 +24,9 @@ public class Player : MonoBehaviour {
         {
             gunAnim.SetBool("isFiring", false);
         }
-	}
+
+       
+    }
 
     public void SendHealthData(int health)
     {

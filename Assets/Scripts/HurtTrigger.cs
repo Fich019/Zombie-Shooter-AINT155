@@ -42,13 +42,26 @@ public class HurtTrigger : MonoBehaviour
      * see link: https://docs.unity3d.com/ScriptReference/MonoBehaviour.OnTriggerEnter.html
      * we will use this to damage the other gameobject if they have a TakeDamage method     
      */
+
+    bool Swing;
+
+    Animator animator;
+
+    private void Start()
+    {
+
+        animator = GetComponent<Animator>();
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         /*
          * SEND THE DAMAGE TO THE OTHER GAMEOBJECT
          * Just like the Bullet, we send the damage to the other GameObject (collision)
          * if the other GameObject has a TakeDamage method, it will run that method
-         */ 
+         */
+        Swing = true;
+        animator.SetBool("Swing", Swing);
         collision.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
 
         /*
@@ -78,5 +91,7 @@ public class HurtTrigger : MonoBehaviour
          * we set the collider's enables property to true to enable it again
          */ 
         GetComponent<Collider2D>().enabled = true;
+        Swing = false;
+        animator.SetBool("Swing", Swing);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour {
+    Animator BowAnim;
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float fireTime = 0.5f;
@@ -16,6 +17,8 @@ public class Weapon : MonoBehaviour {
 
     private void Fire()
     {
+
+        
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
 
@@ -29,13 +32,14 @@ public class Weapon : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+        BowAnim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	private void Update () {
 		if (Input.GetMouseButton(0)) // change this for companion
         {
+            BowAnim.SetBool("isFiring", isFiring);
             if (!isFiring)
             {
                 Fire();

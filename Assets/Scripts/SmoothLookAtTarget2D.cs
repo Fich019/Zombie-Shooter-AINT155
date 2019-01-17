@@ -40,9 +40,9 @@ public class SmoothLookAtTarget2D : MonoBehaviour
             {
                 Vector3 difference = transformC.position - transform.position;
 
-                float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                //float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-                Quaternion newRot = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotZ + adjustmentAngle));
+                Quaternion newRot = Quaternion.Euler(new Vector3(0.0f, 0.0f));
 
                 transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * smoothing);
             }
@@ -50,9 +50,9 @@ public class SmoothLookAtTarget2D : MonoBehaviour
             {
                 Vector3 difference = transformP.position - transform.position;
 
-                float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+                //float rotZ = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
 
-                Quaternion newRot = Quaternion.Euler(new Vector3(0.0f, 0.0f, rotZ + adjustmentAngle));
+                Quaternion newRot = Quaternion.Euler(new Vector3(0.0f, 0.0f));
 
                 transform.rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * smoothing);
 

@@ -9,6 +9,8 @@ public class MoveTowardsObject : MonoBehaviour {
     public Transform target;
     public float DistanceP;
 
+    
+    SpriteRenderer spriterender;
     public float DistanceC;
     public float Range;
     Transform Currentpos;
@@ -16,8 +18,11 @@ public class MoveTowardsObject : MonoBehaviour {
     Transform transformC;
     public float speed = 5.0f;
 
-	// Use this for initialization
-	void Start () {
+    public GameObject Sword;
+    SpriteRenderer spriteSword;
+
+    // Use this for initialization
+    void Start () {
 
         player = GameObject.FindWithTag("Player");
         Companion = GameObject.FindWithTag("Companion");
@@ -47,6 +52,27 @@ public class MoveTowardsObject : MonoBehaviour {
                 Currentpos.position = Vector3.MoveTowards(Currentpos.position, transformP.position, speed * 0.01f);
             }
         }
+    }
+
+    private void FixedUpdate()
+    {
+        //float x = Input.GetAxis("Horizontal");
+        //float y = Input.GetAxis("Vertical");
+
+        //spriterender = GetComponent<SpriteRenderer>();
+        //if (x < 0)
+        //{
+        //    spriterender.flipX = true;
+        //    spriteSword.flipY = true;
+        //    spriteSword.transform.localPosition = new Vector3(0.095f, -0.07f, 0);
+
+        //}
+        //else if (x > 0)
+        //{
+        //    spriterender.flipX = false;
+        //    spriteSword.flipY = false;
+        //    spriteSword.transform.localPosition = new Vector3(-0.095f, -0.07f, 0);
+        //}
     }
 
     public void SetTarget(Transform newTarget)
