@@ -16,9 +16,12 @@ Unity 2D Zombie Shooter
 
 Instructions for usage:  
 Download the repository.  
-Find the Beta build folder located inside.
+Find the Alpha build folder located inside.
 Run the executable.
 WASD to move, mouse to aim and left click to shoot.
 
 References:  
-N/A
+Music:
+  Incompetech : https://incompetech.com/music/
+  MDK : https://morgandavidking.com/
+
