@@ -16,10 +16,9 @@ Unity 2D Zombie Shooter
 
 Instructions for usage:  
 Download the repository.  
-Open in unity.  
-Build and run.  
-Save in folder called Prototype.  
-Run .exe from prototype folder.  
+Find the Beta build folder located inside.
+Run the executable.
+WASD to move, mouse to aim and left click to shoot.
 
 References:  
 N/A
