@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Companion
   - Wall
+  - door
   layers:
   - Default
   - TransparentFX
