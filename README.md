@@ -21,7 +21,7 @@ Run the executable.
 WASD to move, mouse to aim and left click to shoot.
 
 References:  
-Music:
+Music:  
   Incompetech : https://incompetech.com/music/  
   MDK : https://morgandavidking.com/
 
